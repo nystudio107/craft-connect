@@ -6,7 +6,7 @@ Allows you to connect to external databases and perform db queries
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+This plugin requires Craft CMS 3.0.0 or later.
 
 ## Installation
 
@@ -22,6 +22,7 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Connect.
 
+Or you can 
 ## Connect Overview
 
 -Insert text here-

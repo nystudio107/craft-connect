@@ -9,7 +9,8 @@
         "craftcms",
         "craft-plugin",
         "database",
-        "connect"
+        "connect",
+        "query"
     ],
     "support": {
         "docs": "https://github.com/nystudio107/craft-connect/blob/v1/README.md",
