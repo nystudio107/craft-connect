@@ -30,6 +30,8 @@ Or you can install the plugin via the **Plugin Store** in the Craft CMS 3 AdminC
 
 Connect allows you to connect to external databases of any [format that Yii2 supports](https://www.yiiframework.com/doc/guide/2.0/en/db-dao) and perform db queries using a query builder, right from your Twig templates!
 
+![Screenshot](resources/img/connect-code-example.png)
+
 ## Configuring Connect
 
 Connect must be configured via the `config.php`. This is done to keep your database connection credentials out of the any database, and also not in Git. You should use `.env` variables to store any sensitive information.
@@ -103,13 +105,12 @@ Once you have a connection, you can then perform a db query using the full synta
 
 ```twig
 {% set results = craft.connect.query(db)
-                              .select(['id', 'email'])
-                              .from('user')
-                              .where(['last_name' => 'Smith'])
-                              .limit(10)
-                              .all()
+    .select(['id', 'email'])
+    .from('users')
+    .where({'last_name': 'Smith'})
+    .limit(10)
+    .all()
 %}
-
 ```
 
 ...where `db` is the database connection returned to you by `craft.connect.open()`. If `null` is passed in, the database that is used for the Craft CMS install will be used.
