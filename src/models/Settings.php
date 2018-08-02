@@ -31,6 +31,25 @@ class Settings extends Model
     // Public Methods
     // =========================================================================
 
+    public function init()
+    {
+        // Fill in some sane defaults if none are provided
+        if (empty($this->connections)) {
+            $this->connections = [
+                'remote' => [
+                    'driver' => getenv('REMOTE_DB_DRIVER'),
+                    'server' => getenv('REMOTE_DB_SERVER'),
+                    'user' => getenv('REMOTE_DB_USER'),
+                    'password' => getenv('REMOTE_DB_PASSWORD'),
+                    'database' => getenv('REMOTE_DB_DATABASE'),
+                    'schema' => getenv('REMOTE_DB_SCHEMA'),
+                    'tablePrefix' => getenv('REMOTE_DB_TABLE_PREFIX'),
+                    'port' => getenv('REMOTE_DB_PORT')
+                ],
+            ];
+        }
+    }
+
     /**
      * @inheritdoc
      */
