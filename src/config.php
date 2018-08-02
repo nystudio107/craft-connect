@@ -24,21 +24,15 @@
 
 return [
     'connections' => [
-        'example' => [
-            // The database driver that will used ('mysql' or 'pgsql')
-            'driver' => 'mysql',
-            // The database server name or IP address (usually this is 'localhost' or '127.0.0.1')
-            'server' => 'localhost',
-            // The database username to connect with
-            'user' => '',
-            // The database password to connect with
-            'password' => '',
-            // The name of the database to select
-            'database' => '',
-            // The prefix that should be added to generated table names
-            'tablePrefix' => '',
-            // The port to connect to the database with. Will default to 5432 for PostgreSQL and 3306 for MySQL.
-            'port' => '3306',
+        'remote' => [
+            'driver' => getenv('REMOTE_DB_DRIVER'),
+            'server' => getenv('REMOTE_DB_SERVER'),
+            'user' => getenv('REMOTE_DB_USER'),
+            'password' => getenv('REMOTE_DB_PASSWORD'),
+            'database' => getenv('REMOTE_DB_DATABASE'),
+            'schema' => getenv('REMOTE_DB_SCHEMA'),
+            'tablePrefix' => getenv('REMOTE_DB_TABLE_PREFIX'),
+            'port' => getenv('REMOTE_DB_PORT')
         ],
     ],
 ];
