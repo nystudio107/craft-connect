@@ -4,7 +4,7 @@
 
 Allows you to connect to external databases and perform db queries
 
-![Screenshot](docs/resources/img/plugin-logo.png)
+![Screenshot](./docs/docs/resources/img/plugin-logo.png)
 
 ## Requirements
 
