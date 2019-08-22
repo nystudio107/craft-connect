@@ -4,6 +4,7 @@ module.exports = {
     base: '/docs/connect/',
     dest: '../../../../sites/nystudio107/web/docs/connect',
     themeConfig: {
+        displayAllHeaders: true,
         sidebar: [
             ['/', 'Connect plugin for Craft CMS 3.x'],
         ]
