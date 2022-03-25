@@ -31,7 +31,7 @@ class Settings extends Model
     // Public Methods
     // =========================================================================
 
-    public function init()
+    public function init(): void
     {
         // Fill in some sane defaults if none are provided
         if (empty($this->connections)) {
@@ -53,7 +53,7 @@ class Settings extends Model
     /**
      * @inheritdoc
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['connections', ArrayValidator::class],
