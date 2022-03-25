@@ -26,7 +26,7 @@ class Settings extends Model
     /**
      * @var array the database connections
      */
-    public $connections = [];
+    public array $connections = [];
 
     // Public Methods
     // =========================================================================

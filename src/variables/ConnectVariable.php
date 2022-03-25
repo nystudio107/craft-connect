@@ -10,12 +10,10 @@
 
 namespace nystudio107\connect\variables;
 
+use Craft;
 use nystudio107\connect\Connect;
 use nystudio107\connect\db\Query;
 use nystudio107\connect\models\Settings;
-
-use Craft;
-
 use yii\db\Connection;
 use yii\db\Exception;
 
@@ -34,9 +32,9 @@ class ConnectVariable
      *
      * @param string $configName
      *
-     * @return null|Connection
+     * @return ?Connection
      */
-    public function open(string $configName)
+    public function open(string $configName): ?Connection
     {
         $connection = null;
         $config = $this->getDbConfig($configName);
@@ -56,11 +54,11 @@ class ConnectVariable
     /**
      * Returns a new generic query.
      *
-     * @param null|Connection $connection
+     * @param ?Connection $connection
      *
      * @return Query
      */
-    public function query($connection = null): Query
+    public function query(?Connection $connection = null): Query
     {
         return new Query([
             'db' => $connection,
@@ -86,9 +84,9 @@ class ConnectVariable
             $dbConnection = $settings->connections[$configName];
             $config = [
                 'dsn' => "{$dbConnection['driver']}:"
-                    ."host={$dbConnection['server']};"
-                    ."dbname={$dbConnection['database']};"
-                    ."port={$dbConnection['port']};",
+                    . "host={$dbConnection['server']};"
+                    . "dbname={$dbConnection['database']};"
+                    . "port={$dbConnection['port']};",
                 'username' => $dbConnection['user'],
                 'password' => $dbConnection['password'],
                 'tablePrefix' => $dbConnection['tablePrefix'],

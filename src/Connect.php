@@ -10,13 +10,11 @@
 
 namespace nystudio107\connect;
 
-use nystudio107\connect\models\Settings;
-use nystudio107\connect\variables\ConnectVariable;
-
 use Craft;
 use craft\base\Plugin;
 use craft\web\twig\variables\CraftVariable;
-
+use nystudio107\connect\models\Settings;
+use nystudio107\connect\variables\ConnectVariable;
 use yii\base\Event;
 
 /**
@@ -32,9 +30,9 @@ class Connect extends Plugin
     // =========================================================================
 
     /**
-     * @var Connect
+     * @var ?Connect
      */
-    public static $plugin;
+    public static ?Connect $plugin = null;
 
     // Public Properties
     // =========================================================================
@@ -44,27 +42,35 @@ class Connect extends Plugin
      */
     public string $schemaVersion = '1.0.0';
 
+    /**
+     * @var bool
+     */
+    public bool $hasCpSection = false;
+
+    /**
+     * @var bool
+     */
+    public bool $hasCpSettings = false;
+
     // Public Methods
     // =========================================================================
 
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
-
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
-            function (Event $event) {
+            static function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('connect', ConnectVariable::class);
             }
         );
-
         Craft::info(
             Craft::t(
                 'connect',
@@ -81,7 +87,7 @@ class Connect extends Plugin
     /**
      * @inheritdoc
      */
-    protected function createSettingsModel(): ?\craft\base\Model
+    protected function createSettingsModel(): Settings
     {
         return new Settings();
     }

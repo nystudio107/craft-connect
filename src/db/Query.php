@@ -23,9 +23,9 @@ class Query extends \yii\db\Query
     // =========================================================================
 
     /**
-     * @var Connection the database connections
+     * @var ?Connection the database connections
      */
-    public $db = null;
+    public ?Connection $db = null;
 
     // Public Methods
     // =========================================================================
@@ -37,7 +37,7 @@ class Query extends \yii\db\Query
     {
         return parent::createCommand($db ?? $this->db);
     }
-    
+
     /**
      * @inheritdoc
      */
