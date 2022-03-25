@@ -30,7 +30,7 @@ Or you can install the plugin via the **Plugin Store** in the Craft CMS 3 CP.
 
 Connect allows you to connect to external databases of any [format that Yii2 supports](https://www.yiiframework.com/doc/guide/2.0/en/db-dao) and perform db queries using a query builder, right from your Twig templates!
 
-![Screenshot](./resources/img/connect-code-example.png)
+![Screenshot](./resources/screenshots/connect-code-example.png)
 
 ## Configuring Connect
 
