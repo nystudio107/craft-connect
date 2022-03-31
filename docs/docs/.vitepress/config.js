@@ -14,9 +14,9 @@ module.exports = {
     docsDir: 'docs/docs',
     docsBranch: 'v1',
     algolia: {
-      appId: '',
-      apiKey: '',
-      indexName: 'connect'
+      appId: 'NFTSURBI40',
+      apiKey: '0dacf711d8ebc991d68d68e04289a383',
+      indexName: 'nystudio107-connect'
     },
     editLinks: true,
     editLinkText: 'Edit this page on GitHub',
