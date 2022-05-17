@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.0 - 2022.05.17
+### Added
+* Initial Craft CMS 4 release
+
 ## 4.0.0-beta.1 - 2022.03.25
 
 ### Added
