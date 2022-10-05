@@ -2,7 +2,7 @@
   "name": "nystudio107/craft-connect",
   "description": "Allows you to connect to external databases and perform db queries",
   "type": "craft-plugin",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "keywords": [
     "craft",
     "cms",
@@ -27,6 +27,11 @@
   "require": {
     "craftcms/cms": "^4.0.0"
   },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
   "autoload": {
     "psr-4": {
       "nystudio107\\connect\\": "src/"
