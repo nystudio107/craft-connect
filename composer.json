@@ -1,44 +1,50 @@
 {
-    "name": "nystudio107/craft-connect",
-    "description": "Allows you to connect to external databases and perform db queries",
-    "type": "craft-plugin",
-    "version": "1.0.0",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "database",
-        "connect",
-        "query"
-    ],
-    "support": {
-        "docs": "https://nystudio107.com/plugins/connect/documentation",
-        "issues": "https://nystudio107.com/plugins/connect/support"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "nystudio107",
-            "homepage": "https://nystudio107.com/"
-        }
-    ],
-    "require": {
-        "craftcms/cms": "^3.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-          "nystudio107\\connect\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "Connect",
-        "handle": "connect",
-        "hasCpSettings": false,
-        "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-connect/v1/CHANGELOG.md",
-        "components": {
-        },
-        "class": "nystudio107\\connect\\Connect"
+  "name": "nystudio107/craft-connect",
+  "description": "Allows you to connect to external databases and perform db queries",
+  "type": "craft-plugin",
+  "version": "1.0.1",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "database",
+    "connect",
+    "query"
+  ],
+  "support": {
+    "docs": "https://nystudio107.com/plugins/connect/documentation",
+    "issues": "https://nystudio107.com/plugins/connect/support"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "nystudio107",
+      "homepage": "https://nystudio107.com/"
     }
+  ],
+  "require": {
+    "craftcms/cms": "^3.0.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "nystudio107\\connect\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Connect",
+    "handle": "connect",
+    "hasCpSettings": false,
+    "hasCpSection": false,
+    "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-connect/v1/CHANGELOG.md",
+    "components": {
+    },
+    "class": "nystudio107\\connect\\Connect"
+  }
 }
