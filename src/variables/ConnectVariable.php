@@ -12,6 +12,7 @@ namespace nystudio107\connect\variables;
 
 use nystudio107\connect\Connect;
 use nystudio107\connect\db\Query;
+use nystudio107\connect\db\Schema;
 use nystudio107\connect\models\Settings;
 
 use Craft;
@@ -63,6 +64,20 @@ class ConnectVariable
     public function query($connection = null): Query
     {
         return new Query([
+            'db' => $connection,
+        ]);
+    }
+
+    /**
+     * Returns a new generic schema.
+     *
+     * @param null|Connection $connection
+     *
+     * @return Schema
+     */
+    public function schema($connection = null): Schema
+    {
+        return new Schema([
             'db' => $connection,
         ]);
     }
